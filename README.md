@@ -1,0 +1,2 @@
+# kubernetes-manifests
+Example manifests
