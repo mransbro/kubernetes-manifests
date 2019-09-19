@@ -1,0 +1,14 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: same-app-only
+  namespace: meme-app                                                                                                                                              spec
+spec:
+  podSelector:
+    matchLabels:
+      app: meme-maker
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: meme-maker
