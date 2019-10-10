@@ -1,0 +1,16 @@
+apiVerion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume
+  namespace: data
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  awsElasticBlockStore:
+    volumeID: aws://eu-west-1b/vol-123456789
+    fsType: ext4
+  storageClassName: ebs
+  persistentVolumeReclaimPolicy: Delete
+  volumeMode: Filesystem
